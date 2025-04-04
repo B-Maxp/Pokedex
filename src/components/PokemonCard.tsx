@@ -1,3 +1,4 @@
+import'./PokemonCard.css'
 interface props {
     pokemon:{
         name: string
@@ -8,7 +9,7 @@ interface props {
 function PokemonCard({ pokemon }: props) {
 
     return (
-        <figure>
+        <figure className={`${pokemon.name}`}>
             {pokemon.imgSrc !== undefined ? (<img src={pokemon.imgSrc} alt={pokemon.name} />) : (<p>???</p>)}
             <figcaption>{pokemon.name}</figcaption>
         </figure>

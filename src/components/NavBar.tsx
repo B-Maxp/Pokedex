@@ -8,13 +8,19 @@ interface NavBarProps {
     pokemonList: Pokemon[];
 }
 
-function NavBar({ pokemonList, setPokemonName }: NavBarProps) {
+function NavBar({ pokemonList, setPokemonName,}: NavBarProps) {
+    
     return <nav>
         {pokemonList.map((pokemon) => (
             <button
                 type='button'
                 key={pokemon.name}
-                onClick={() => setPokemonName(pokemon.name)}
+                onClick={() => {
+                    setPokemonName(pokemon.name)
+                    if(pokemon.name === "pikachu"){
+                        alert("pika pikachu !!!")
+                    }
+                }}
             >
                 {pokemon.name}
             </button>
